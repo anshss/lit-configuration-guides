@@ -21,12 +21,21 @@ module.exports = defineConfig({
         {
           test: /\.ts$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
+          use: [
+            {
+              loader: 'thread-loader',
+              options: {
+                workers: require('os').cpus().length - 1,
+              },
             },
-          },
+            {
+              loader: 'ts-loader',
+              options: {
+                appendTsSuffixTo: [/\.vue$/],
+                happyPackMode: true, // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
+              },
+            },
+          ],
         },
       ],
     },
