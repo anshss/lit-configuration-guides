@@ -1,10 +1,12 @@
 ## Used framework
 NextJs
 
-## SDK version
-6.3.0
+## Framework docs
+[https://vuejs.org/](https://nextjs.org/docs)
 
-## Running the project
+## Configuration file
+No changes needed
+
+## Getting started
 1. `npm i`
-2. `npm start`
-3. Click the `Instantiate Lit` button
+2. `npm run dev`
