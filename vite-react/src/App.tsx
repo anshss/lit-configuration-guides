@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lit with React</h1>
+      <h1>Lit with Vite-React</h1>
       <p>Check console</p>
       <button onClick={instantiateLit}>Instantiate Lit</button>
     </div>

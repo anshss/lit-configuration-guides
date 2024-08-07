@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import inject from '@rollup/plugin-inject';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -21,7 +20,6 @@ export default defineConfig({
     rollupOptions: {
       plugins: [
         inject({
-          global: ['globalThis', 'global'],
           Buffer: ['buffer', 'Buffer']
         })
       ]
