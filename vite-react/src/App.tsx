@@ -2,7 +2,7 @@ import './App.css';
 import { LitNodeClient } from "@lit-protocol/lit-node-client";
 import { LitNetwork } from "@lit-protocol/constants";
 
-function App() {
+const App: React.FC = () => {
 
   async function instantiateLit() {
     console.log("connection lit..")
