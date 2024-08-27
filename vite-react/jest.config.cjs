@@ -9,10 +9,7 @@ module.exports = {
   },
   moduleDirectories: ["node_modules", "<rootDir>/"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
-  preset: 'ts-jest',
-  globals: {
-    'ts-jest': {
-      tsconfig: './tsconfig.app.json', // Explicitly point to the tsconfig.app.json
-    },
+  transform: {
+    "^.+\\.tsx?$": ['ts-jest', { tsconfig: './tsconfig.app.json' }]
   },
 };
