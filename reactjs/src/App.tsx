@@ -12,7 +12,7 @@ function App() {
         const litNodeClient = new LitNodeClient({
             litNetwork: LitNetwork.DatilDev,
         });
-        // await setTimeout(() => console.log(), 5000);
+
         await litNodeClient.connect();
         console.log("Connected!");
         setStatus("Connected!");
