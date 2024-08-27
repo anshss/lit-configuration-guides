@@ -1,8 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom'; // Ensure this import is present
+import '@testing-library/jest-dom';
 import App from './app/page';
 
-// Mock the LitNodeClient
 jest.mock('@lit-protocol/lit-node-client', () => {
   return {
     LitNodeClient: jest.fn().mockImplementation(() => {
@@ -21,10 +20,7 @@ describe('App', () => {
 
     fireEvent.click(button);
 
-    // Check if "Connecting to Lit..." is displayed
     expect(await screen.findByText('Connecting to Lit...')).toBeInTheDocument();
-
-    // Wait for "Connected!" to be displayed with increased timeout
     expect(await screen.findByText('Connected!', {}, { timeout: 10000 })).toBeInTheDocument();
   });
 });

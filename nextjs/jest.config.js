@@ -8,10 +8,10 @@ const customJestConfig = {
   moduleDirectories: ["node_modules", "<rootDir>/"],
   testEnvironment: "jest-environment-jsdom",
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest", // Transform TypeScript files
-    "^.+\\.(mjs)$": "babel-jest", // Support for ES modules with .mjs files
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(mjs)$": "babel-jest",
   },
-  extensionsToTreatAsEsm: [".ts", ".tsx"], // Removed ".js" to avoid conflict
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
 };
 
 module.exports = createJestConfig(customJestConfig);
