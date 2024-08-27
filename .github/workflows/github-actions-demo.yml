@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        folder: [nextjs, reactjs]
+        folder: [nextjs, reactjs, vite-react]
 
     steps:
       - name: Checkout repository
