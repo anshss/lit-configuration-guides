@@ -1,0 +1,12 @@
+{
+  "name": "nextjs",
+  "root": "nextjs",
+  "targets": {
+    "update-lit": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd nextjs && npm install @lit-protocol/lit-node-client@latest"
+      }
+    }
+  }
+}

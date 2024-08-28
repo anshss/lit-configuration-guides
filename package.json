@@ -1,0 +1,19 @@
+{
+  "name": "lit-configuration-guides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "update-lit": "nx run-many --target=update-lit --all"
+  },
+  "workspaces": [
+    "nextjs",
+    "reactjs",
+    "vite-react",
+    "vuejs",
+    "lit",
+    "preact"
+  ],
+  "devDependencies": {
+    "nx": "19.6.3"
+  }
+}
