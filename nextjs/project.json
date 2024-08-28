@@ -5,7 +5,7 @@
     "update-lit": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cd nextjs && npm install @lit-protocol/lit-node-client@latest"
+        "command": "cd nextjs && LATEST_VERSION=$(npm show @lit-protocol/lit-node-client version) && npm pkg set dependencies.@lit-protocol/lit-node-client=^$LATEST_VERSION"
       }
     }
   }
