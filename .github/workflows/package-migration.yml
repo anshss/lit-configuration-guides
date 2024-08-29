@@ -2,7 +2,7 @@ name: Package Migration
 on:
   pull_request:
     branches:
-      - test
+      - ci
     types: [opened]
   workflow_dispatch:
 
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-
+      
       - name: Install dependencies
         run: npm install
 
@@ -53,6 +53,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           branch: ${{ steps.commit-changes.outputs.branch_name }}
-          base: test
+          base: ci
           title: "Automated Package Migration"
           body: "This PR was created automatically after running the package migration script."
