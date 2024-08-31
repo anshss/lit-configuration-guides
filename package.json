@@ -3,17 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test-lit": "nx run-many --target=test-lit --all --parallel=1",
-    "update-lit": "nx run-many --target=update-lit --all"
+    "test-lit": "nx run-many --target=test-lit --all --parallel",
+    "update-lit": "nx run-many --target=update-lit --all --parallel"
   },
-  "workspaces": [
-    "nextjs",
-    "reactjs",
-    "vite-react",
-    "vuejs",
-    "lit",
-    "preact"
-  ],
   "devDependencies": {
     "nx": "19.6.3"
   }
