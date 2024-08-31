@@ -5,33 +5,10 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
           "update-lit"
         ]
       }
     }
   },
-  "defaultBase": "main",
-  "projects": {
-    "nextjs": {
-      "tags": []
-    },
-    "reactjs": {
-      "tags": []
-    },
-    "vite-react": {
-      "tags": []
-    },
-    "vuejs": {
-      "tags": []
-    },
-    "lit": {
-      "tags": []
-    },
-    "preact": {
-      "tags": []
-    }
-  }
+  "defaultBase": "main"
 }

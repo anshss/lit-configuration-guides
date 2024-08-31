@@ -2,6 +2,13 @@
     "name": "vite-react",
     "root": "vite-react",
     "targets": {
+
+    "test-lit": {
+      "executor": "nx:run-commands",
+      "options": {
+          "command": "cd vite-react && npm i && npm run test"
+      }
+  },
       "update-lit": {
         "executor": "nx:run-commands",
         "options": {
