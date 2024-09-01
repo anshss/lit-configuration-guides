@@ -2,12 +2,13 @@ name: Package Migration
 on:
   pull_request:
     branches:
-      - ci
+      - main
     types: [opened]
   workflow_dispatch:
 
 jobs:
   migrate-package:
+    if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -47,12 +48,3 @@ jobs:
         run: |
           git push --set-upstream origin "${{ steps.commit-changes.outputs.branch_name }}"
           echo "Pushed to branch: ${{ steps.commit-changes.outputs.branch_name }}"
-
-      - name: Create PR (for manual run)
-        if: ${{ github.event_name != 'workflow_dispatch' }} && success()
-        uses: peter-evans/create-pull-request@v5
-        with:
-          branch: ${{ steps.commit-changes.outputs.branch_name }}
-          base: ci
-          title: "Automated Package Migration"
-          body: "This PR was created automatically after running the package migration script."

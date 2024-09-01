@@ -1,37 +1,28 @@
-name: Run Next.js Configuration Test
+name: Framework Tests
 
 on:
-  push:
-    branches:
-      - actions
+#   schedule:
+#     - cron: '0 0,12 * * *'
   pull_request:
     branches:
-      - actions
+      - main
   workflow_dispatch:
 
 jobs:
-  test:
+  setup-and-test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        folder: [nextjs, reactjs, vite-react]
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      - name: Install dependencies
-        run: |
-          cd ${{ matrix.folder }}
-          npm install
+    - name: Install root dependencies
+      run: npm install
 
-      - name: Run tests
-        run: |
-          cd ${{ matrix.folder }}
-          npm run test
+    - name: Run Tests
+      run: npm run test-lit
