@@ -2,12 +2,6 @@
     "name": "lit",
     "root": "lit",
     "targets": {
-        "test-lit": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "cd lit && npm i && npm run test"
-            }
-        },
         "update-lit": {
             "executor": "nx:run-commands",
             "options": {

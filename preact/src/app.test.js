@@ -1,5 +1,3 @@
-/** @jest-environment jsdom */
-import { h } from 'preact';
 import { render, screen, fireEvent } from '@testing-library/preact';
 import '@testing-library/jest-dom';
 import App from "./app";

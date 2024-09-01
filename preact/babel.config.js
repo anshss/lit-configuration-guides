@@ -7,7 +7,7 @@ module.exports = {
     ["@babel/preset-react", { 
       pragma: "h", 
       pragmaFrag: "Fragment",
-      runtime: "classic"  // Changed from "automatic" to "classic"
+      runtime: "classic"
     }],
     "@babel/preset-typescript"
   ],
