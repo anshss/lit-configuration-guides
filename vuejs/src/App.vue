@@ -13,12 +13,14 @@ export default defineComponent({
   methods: {
     async instantiateLit() {
       this.status = 'Connecting to Lit...';
+      console.log("Connecting to Lit...");
       const litNodeClient = new LitNodeClient({
         litNetwork: LitNetwork.DatilDev,
         debug: false,
       });
 
       await litNodeClient.connect();
+      console.log("Connected!")
       this.status = 'Connected!';
     },
   },
