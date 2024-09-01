@@ -6,8 +6,10 @@ module.exports = {
   transform: {
       "^.+\\.(ts|tsx)$": "ts-jest",
       "^.+\\.(js|jsx)$": "babel-jest",
-      "^.+\\.tsx?$": ['ts-jest', { tsconfig: './tsconfig.app.json' }]
   },
   moduleDirectories: ["node_modules", "<rootDir>/"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
+  transform: {
+    "^.+\\.tsx?$": ['ts-jest', { tsconfig: './tsconfig.app.json' }]
+  },
 };
